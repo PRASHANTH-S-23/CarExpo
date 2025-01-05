@@ -217,3 +217,28 @@ header{
     background: var(--main-color);
     color: var(--bg-color);
  }
+
+ .about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+ }
+
+ .about-img {
+    flex: 1 1 21 rem;
+ }
+
+ .about-text span{
+    flex-weight: 500;
+    color: var(--main-color);
+ }
+
+ .about-text h2 {
+    font-size: 1.7rem;
+ }
+
+ .about-text p {
+    font-size: 0.938rem;
+    margin: 0.5rem 0 1.4rem; 
+ }
