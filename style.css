@@ -230,7 +230,7 @@ header{
  }
 
  .about-text span{
-    flex-weight: 500;
+    font-weight: 500;
     color: var(--main-color);
  }
 
@@ -241,4 +241,51 @@ header{
  .about-text p {
     font-size: 0.938rem;
     margin: 0.5rem 0 1.4rem; 
+ }
+
+ .blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+ }
+
+ .blog-container .box {
+    flex: 1 1 13rem;
+    padding: 20px;
+ }
+
+ .blog-container .box:hover {
+    background: #f6f6f6 ;
+ }
+
+ .blog-container .box span {
+    font-size: 0.8rem;
+    color: var(--main-color);
+ }
+
+ .blog-container h3 {
+  font-size: 1.2 rem;  
+ }
+
+ .blog-container .box p {
+    font-size: 0.938rem;
+    margin: 4px 0;
+ }
+
+ .blog-container .box .blog-btn {
+    display: flex;
+    align-items: center;
+    column-gap: 4;
+    color: var(--text-color);
+ }
+
+ .blog-container .box .blog-btn .bx {
+    font-size: 20px;
+ }
+
+ .blog-container .box .blog-btn:hover {
+    color: var(--main-color);
+    column-gap: 0.7rem;
+    transition: 0.4s;
  }
