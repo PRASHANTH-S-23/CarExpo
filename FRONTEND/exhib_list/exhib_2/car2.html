@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Listing</title>
+    <link rel="stylesheet" href="car.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <div class="max-w-6xl mx-auto p-4">
+        <!-- Main Content -->
+        <div class="flex flex-col lg:flex-row">
+            <div class="flex-1">
+                <h1 class="text-3xl font-bold mb-4">Maruti Suzuki Celerio (2014)</h1>
+
+                <!-- Main Image -->
+                <div class="relative">
+                    <img src="car2.jpg" alt="Maruti Suzuki Celerio" class="w-full rounded-lg">
+                    <div class="absolute top-2 left-2 bg-white text-black px-2 py-1 rounded">Petrol</div>
+                </div>
+
+                <!-- Thumbnails -->
+                <div class="flex mt-4 space-x-2">
+                    <a href="car1.html" data-page="car1" class="thumbnail">
+                        <img src="car1.jpg" alt="Side view of Maruti Suzuki Celerio" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car3.html" data-page="car2" class="thumbnail">
+                        <img src="car3.jpg" alt="Rear view of Maruti Suzuki Celerio" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car4.html" data-page="car1" class="thumbnail">
+                        <img src="car4.jpeg" alt="Side view of Maruti Suzuki Celerio" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car5.html" data-page="car2" class="thumbnail">
+                        <img src="car5.jpg" alt="Rear view of Maruti Suzuki Celerio" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car6.html" data-page="car1" class="thumbnail">
+                        <img src="car6.jpg" alt="Side view of Maruti Suzuki Celerio" class="w-16 h-10 rounded-lg">
+                    </a>
+                  
+                </div>
+
+            </div>
+
+            <!-- Car Description -->
+            <div class="lg:w-1/3 lg:ml-8 mt-8 lg:mt-0 bg-gray-800 text-white p-4 rounded-lg">
+                <h2 class="text-lg font-bold mb-2">Car Description</h2>
+                <p>
+                    Maruti Suzuki launched the Celerio in 2014, featuring the revolutionary Auto Gear Shift (AGS) technology.
+                    Known for its compact design and efficiency, the Celerio is powered by a 1.0L K-series engine delivering
+                    exceptional fuel economy of 23.1 km/l. With its spacious interior and modern features, the Celerio is
+                    perfect for urban commuters and small families.
+                </p>
+            </div>
+        </div>
+
+        <!-- Car Details -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Car Details</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                <div class="flex items-center"><i class="fas fa-tachometer-alt text-red-500 mr-2"></i> Mileage: <span class="ml-auto">23.1 km/l</span></div>
+                <div class="flex items-center"><i class="fas fa-cogs text-red-500 mr-2"></i> Engine: <span class="ml-auto">1.0L K-series engine</span></div>
+                <div class="flex items-center"><i class="fas fa-calendar-alt text-red-500 mr-2"></i> Year: <span class="ml-auto">2014</span></div>
+                <div class="flex items-center"><i class="fas fa-gas-pump text-red-500 mr-2"></i> Fuel consumption: <span class="ml-auto">4.3 L/100 km</span></div>
+                <div class="flex items-center"><i class="fas fa-tint text-red-500 mr-2"></i> Fuel type: <span class="ml-auto">Petrol</span></div>
+                <div class="flex items-center"><i class="fas fa-road text-red-500 mr-2"></i> Transmission: <span class="ml-auto">Auto Gear Shift (AGS)</span></div>
+                <div class="flex items-center"><i class="fas fa-palette text-red-500 mr-2"></i> Exterior Color: <span class="ml-auto">Silver, Blue, White</span></div>
+                <div class="flex items-center"><i class="fas fa-chair text-red-500 mr-2"></i> Interior Color: <span class="ml-auto">Beige and Black</span></div>
+                <div class="flex items-center"><i class="fas fa-car text-red-500 mr-2"></i> Seating Capacity: <span class="ml-auto">5</span></div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Features</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> ABS</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Dual Airbags</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Alloy wheels</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Bluetooth Connectivity</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Power Steering</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Keyless Entry</div>
+            </div>
+        </div>
+
+        <!-- Similar Listings -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Similar Listings</h2>
+            <div class="space-y-4">
+                <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                    <img src="car3.jpg" alt="Hyundai Santro" class="w-16 h-10 rounded-lg">
+                    <div class="ml-4">
+                        <h3 class="font-bold"><a href="car3.html">Hyundai Grand i10 (2013)</a></h3>
+                        <div class="text-red-500 font-bold">$7,000</div>
+                    </div>
+                    <div class="ml-auto text-gray-500"><i class="fas fa-heart"></i> 90</div>
+                </div>
+                <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                    <img src="car6.jpg" alt="Tata Tiago" class="w-16 h-10 rounded-lg">
+                    <div class="ml-4">
+                        <h3 class="font-bold"><a href="car6.html">Ford Mustang (2016)</a></h3>
+                        <div class="text-red-500 font-bold">$8,500</div>
+                    </div>
+                    <div class="ml-auto text-gray-500"><i class="fas fa-heart"></i> 120</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="car3.js"></script>
+</body>
+
+</html>

@@ -246,10 +246,6 @@ header.shadow #search-icon {
     gap: 1.5rem;
  }
 
- .about-img {
-    flex: 1 1 21 rem;
- }
-
  .about-text span{
     font-weight: 500;
     color: var(--main-color);
