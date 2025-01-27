@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Listing</title>
+    <link rel="stylesheet" href="car.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="max-w-6xl mx-auto p-4">
+        <div class="flex flex-col lg:flex-row">
+            <div class="flex-1">
+                <h1 class="text-3xl font-bold mb-4">Kia EV6 Facelift 2023</h1>
+                <div class="relative">
+                    <img src="car4.png" alt="Kia EV6 Facelift" class="w-full rounded-lg">
+                    <div class="absolute top-2 left-2 bg-white text-black px-2 py-1 rounded">Electric</div>
+                </div>
+                <div class="flex mt-4 space-x-2">
+                    <!-- Thumbnail links updated to avoid full page reload -->
+                    <a href="car1.html" data-page="car1" class="thumbnail">
+                        <img src="car11.jpeg" alt="Thumbnail of BMW iX1 LWB" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car2.html" data-page="car2" class="thumbnail">
+                        <img src="car2.jpg" alt="Thumbnail of Hyundai Staria MPV" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car3.html" data-page="car3" class="thumbnail">
+                        <img src="car3.png" alt="Thumbnail of BYD Sealion 6 PHEV" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car5.html" data-page="car4" class="thumbnail">
+                        <img src="car5.png" alt="Thumbnail of Kia EV6 facelift" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car6.html" data-page="car5" class="thumbnail">
+                        <img src="car6.jpg" alt="Thumbnail of Maruti e Vitara" class="w-16 h-10 rounded-lg">
+                    </a>
+                </div>
+                <div class="mt-8">
+                    <!-- Back Button -->
+                    <a href="car1.html" id="backButton" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-700">Back to Main Page</a>
+                </div>
+                
+            </div>
+            <div class="lg:w-1/3 lg:ml-8 mt-8 lg:mt-0 car-description bg-gray-800 text-white p-4 rounded-lg">
+                <h2 class="text-lg font-bold mb-2">Car Description</h2>
+                <p>The Kia EV6 Facelift offers an upgraded electric driving experience with enhanced performance and modern features. The new design brings a more aggressive look, while the interior provides an even more futuristic feel. With a 77.4 kWh battery pack, it promises a range of up to 510 km on a full charge. This car features fast charging capabilities, reaching 80% charge in just 18 minutes. A perfect combination of power, luxury, and technology.</p>
+            </div>
+        </div>
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Car Details</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                <div class="flex items-center"><i class="fas fa-tachometer-alt text-red-500 mr-2"></i> Mileage: <span class="ml-auto">510 km range</span></div>
+                <div class="flex items-center"><i class="fas fa-cogs text-red-500 mr-2"></i> Engine: <span class="ml-auto">Dual-motor electric</span></div>
+                <div class="flex items-center"><i class="fas fa-calendar-alt text-red-500 mr-2"></i> Year: <span class="ml-auto">2023</span></div>
+                <div class="flex items-center"><i class="fas fa-gas-pump text-red-500 mr-2"></i> Fuel consumption: <span class="ml-auto">15.6 kWh/100 km</span></div>
+                <div class="flex items-center"><i class="fas fa-tint text-red-500 mr-2"></i> Fuel type: <span class="ml-auto">Electric</span></div>
+                <div class="flex items-center"><i class="fas fa-road text-red-500 mr-2"></i> Fuel economy: <span class="ml-auto">15.6 kWh/100 km</span></div>
+                <div class="flex items-center"><i class="fas fa-palette text-red-500 mr-2"></i> Exterior Color: <span class="ml-auto">Runway Red, Aurora Black, Snow White Pearl</span></div>
+                <div class="flex items-center"><i class="fas fa-chair text-red-500 mr-2"></i> Interior Color: <span class="ml-auto">Black/White Leather</span></div>
+                <div class="flex items-center"><i class="fas fa-cogs text-red-500 mr-2"></i> Transmission: <span class="ml-auto">Automatic</span></div>
+                <div class="flex items-center"><i class="fas fa-bolt text-red-500 mr-2"></i> Power: <span class="ml-auto">325 hp</span></div>
+                <div class="flex items-center"><i class="fas fa-car text-red-500 mr-2"></i> Drive: <span class="ml-auto">AWD</span></div>
+            </div>
+        </div>
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Features</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> ABS</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Airbags</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Alloy wheels</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Adaptive cruise control</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Lane-keeping assist</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Premium Sound System</div>
+            </div>
+        </div>
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Similar Listings</h2>
+            <div class="space-y-4">
+                <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                    <img src="car5.png" alt="Red Toyota Camry car" class="w-16 h-10 rounded-lg">
+                    <div class="ml-4">
+                        <h3 class="font-bold"><a href="car5.html"> Maruti e Vitara</a></h3>
+                        <div class="text-red-500 font-bold">$45,000</div>
+                    </div>
+                    <div class="ml-auto text-gray-500"><i class="fas fa-heart"></i> 100</div>
+                </div>
+                <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                    <img src="car6.jpg" alt="Silver Lexus IS 250 car" class="w-16 h-10 rounded-lg">
+                    <div class="ml-4">
+                        <h3 class="font-bold"><a href="car6.html"> Mercedes-Benz Unveils Luxury Sedan</a></h3>
+                        <div class="text-red-500 font-bold">$35,000</div>
+                    </div>
+                    <div class="ml-auto text-gray-500"><i class="fas fa-heart"></i> 200</div>
+                </div>
+                <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                    <img src="car11.jpeg" alt="Blue Mazda CX-5 car" class="w-16 h-10 rounded-lg">
+                    <div class="ml-4">
+                        <h3 class="font-bold"><a href="car1.html">BMW iX1 LWB 2023 </a></h3>
+                        <div class="text-red-500 font-bold">$35,000</div>
+                    </div>
+                    <div class="ml-auto text-gray-500"><i class="fas fa-heart"></i> 19,000</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="car3.js"></script>
+</body>
+</html>

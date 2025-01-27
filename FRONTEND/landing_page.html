@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarExpo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f5e9e4;
+            height: 100vh; /* Full height of the viewport */
+            margin: 0; /* Remove default margin */
+        }
+        .background-image {
+            background-image: url('https://placehold.co/800x600');
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Full height */
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center min-h-screen">
+    <div class="relative bg-white rounded-lg shadow-lg overflow-hidden w-full h-full">
+        <div class="background-image relative w-full h-full">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+            <div class="absolute top-0 left-0 p-6 flex justify-between items-center w-full">
+                <div class="text-white font-bold text-lg">CarExpo</div>
+                <nav class="flex space-x-4 text-white">
+                    <a href="#" class="hover:text-yellow-400"> Welcome </a>
+                </nav>
+                <div class="flex space-x-4">
+                    <a href="login.html" class="text-white hover:text-yellow-500">Login</a>
+                    <a href="signup.html" class="bg-yellow-400 text-black px-4 py-2 rounded-full hover:bg-yellow-500">Sign up</a>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 p-6 text-white">
+                <h1 class="text-4xl font-bold">Children far from home</h1>
+                <p class="mt-2 max-w-md">
+                    At dusk on the bank of the river,<br>
+                    Watching the wind through the willow tree,<br>
+                    Listening to the sound of fruits,<br>
+                    The thought of leaving home, to the home, has tied my heart.<br>
+                    One day, I may be back to the mother's embrace.
+                </p>
+            </div>
+            <div class="absolute bottom-0 left-0 p-6 flex space-x-4">
+                <a href="#" class="text-white hover:text-yellow-400"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white hover:text-yellow-400"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:text-yellow-400"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

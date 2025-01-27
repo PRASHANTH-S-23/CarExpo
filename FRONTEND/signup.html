@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="login_signup_style.css" />
+    <title>Signup - Heritage Hub</title>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <a href="index.html" class="logo">Heritage Hub</a>
+      <div class="nav-links">
+        <a href="login.html">Login</a>
+      </div>
+    </nav>
+
+    <!-- Signup Form -->
+    <div class="form-container">
+      <h2>Signup</h2>
+      <form id="signup" enctype="multipart/form-data">
+        <label for="signup-first-name">First Name</label>
+        <input type="text" id="signup-first-name" name="firstName" required />
+
+        <label for="signup-last-name">Last Name</label>
+        <input type="text" id="signup-last-name" name="lastName" required />
+
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email" name="email" required />
+
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" name="password" required />
+
+        <label for="signup-nationality">Nationality</label>
+        <select id="signup-nationality" name="nationality" required>
+          <option value="India">India</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <div id="india-fields" style="display: none;">
+          <label for="signup-aadhaar">Aadhaar Number</label>
+          <input type="text" id="signup-aadhaar" name="aadhaar" />
+
+          <label for="signup-aadhaar-image">Upload Aadhaar Card</label>
+          <input type="file" id="signup-aadhaar-image" name="aadhaarImage" accept="image/*" />
+
+          <label for="signup-pan">PAN Number</label>
+          <input type="text" id="signup-pan" name="pan" />
+
+          <label for="signup-pan-image">Upload PAN Card</label>
+          <input type="file" id="signup-pan-image" name="panImage" accept="image/*" />
+        </div>
+
+        <div id="other-fields" style="display: none;">
+          <label for="signup-passport">Passport Number</label>
+          <input type="text" id="signup-passport" name="passport" />
+
+          <label for="signup-passport-image">Upload Passport</label>
+          <input type="file" id="signup-passport-image" name="passportImage" accept="image/*" />
+        </div>
+
+        <label for="signup-mobile">Mobile Number</label>
+        <input type="text" id="signup-mobile" name="mobile" required />
+
+        <label for="signup-dob">Date of Birth</label>
+        <input type="date" id="signup-dob" name="dob" required />
+
+        <button type="submit">Signup</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Log in here</a>.</p>
+    </div>
+
+    <script>
+      // Toggle input fields based on nationality
+      const nationalitySelect = document.getElementById("signup-nationality");
+      const indiaFields = document.getElementById("india-fields");
+      const otherFields = document.getElementById("other-fields");
+
+      // Initially set the fields based on the selected nationality
+      document.addEventListener("DOMContentLoaded", () => {
+        if (nationalitySelect.value === "India") {
+          indiaFields.style.display = "block";
+          otherFields.style.display = "none";
+        } else {
+          indiaFields.style.display = "none";
+          otherFields.style.display = "block";
+        }
+      });
+
+      nationalitySelect.addEventListener("change", () => {
+        if (nationalitySelect.value === "India") {
+          indiaFields.style.display = "block";
+          otherFields.style.display = "none";
+        } else {
+          indiaFields.style.display = "none";
+          otherFields.style.display = "block";
+        }
+      });
+
+      // Handle form submission
+      document.getElementById("signup").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+
+        const response = await fetch("http://localhost:3000/signup", {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          // Store the user ID in localStorage
+          localStorage.setItem("userId", data.userId);
+          alert("Signup successful!");
+          window.location.href = "userdetails.html"; // Redirect to user details page
+        } else {
+          alert(data.message); // Display error message if signup fails
+        }
+      });
+    </script>
+  </body>
+</html>

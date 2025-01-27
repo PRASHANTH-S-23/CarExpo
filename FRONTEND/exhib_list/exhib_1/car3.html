@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Listing</title>
+    <link rel="stylesheet" href="car.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="max-w-6xl mx-auto p-4">
+        <div class="flex flex-col lg:flex-row">
+            <div class="flex-1">
+                <h1 class="text-3xl font-bold mb-4">BYD Sealion 6 PHEV 2023</h1>
+                <div class="relative">
+                    <img src="car3.png" alt="BYD Sealion 6 PHEV" class="w-full rounded-lg">
+                    <div class="absolute top-2 left-2 bg-white text-black px-2 py-1 rounded">PHEV</div>
+                </div>
+                <div class="flex mt-4 space-x-2">
+                    <!-- Thumbnail links updated to avoid full page reload -->
+                    <a href="car1.html" data-page="car1" class="thumbnail">
+                        <img src="car11.jpeg" alt="Thumbnail of BMW iX1 LWB" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car2.html" data-page="car2" class="thumbnail">
+                        <img src="car2.jpg" alt="Thumbnail of Hyundai Staria MPV" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car4.html" data-page="car3" class="thumbnail">
+                        <img src="car4.png" alt="Thumbnail of BYD Sealion 6 PHEV" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car5.html" data-page="car4" class="thumbnail">
+                        <img src="car5.png" alt="Thumbnail of Kia EV6 facelift" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car6.html" data-page="car5" class="thumbnail">
+                        <img src="car6.jpg" alt="Thumbnail of Maruti e Vitara" class="w-16 h-10 rounded-lg">
+                    </a>
+                </div>
+                <div class="mt-8">
+                    <!-- Back Button -->
+                    <a href="car1.html" id="backButton" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-700">Back to Main Page</a>
+                </div>
+                
+            </div>
+            <div class="lg:w-1/3 lg:ml-8 mt-8 lg:mt-0 car-description bg-gray-800 text-white p-4 rounded-lg">
+                <h2 class="text-lg font-bold mb-2">Car Description</h2>
+                <p>The BYD Sealion 6 PHEV combines style with efficiency, offering a powerful plug-in hybrid electric vehicle experience. It is equipped with a 13 kWh battery and features an all-electric range of 60 km. The SUV also has a 2.0L turbocharged engine and produces a total power output of 300 hp. With advanced safety features and luxury comfort, the BYD Sealion 6 PHEV is perfect for the modern driver.</p>
+            </div>
+        </div>
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Car Details</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                <div class="flex items-center"><i class="fas fa-tachometer-alt text-red-500 mr-2"></i> Mileage: <span class="ml-auto">60 km electric range</span></div>
+                <div class="flex items-center"><i class="fas fa-cogs text-red-500 mr-2"></i> Engine: <span class="ml-auto">2.0L Turbocharged PHEV</span></div>
+                <div class="flex items-center"><i class="fas fa-calendar-alt text-red-500 mr-2"></i> Year: <span class="ml-auto">2023</span></div>
+                <div class="flex items-center"><i class="fas fa-gas-pump text-red-500 mr-2"></i> Fuel consumption: <span class="ml-auto">7.8 L/100 km</span></div>
+                <div class="flex items-center"><i class="fas fa-tint text-red-500 mr-2"></i> Fuel type: <span class="ml-auto">Hybrid (Electric + Petrol)</span></div>
+                <div class="flex items-center"><i class="fas fa-road text-red-500 mr-2"></i> Fuel economy: <span class="ml-auto">12.3 kWh/100 km</span></div>
+                <div class="flex items-center"><i class="fas fa-palette text-red-500 mr-2"></i> Exterior Color: <span class="ml-auto">White, Silver, Black</span></div>
+                <div class="flex items-center"><i class="fas fa-chair text-red-500 mr-2"></i> Interior Color: <span class="ml-auto">Leather, Elegant</span></div>
+                <div class="flex items-center"><i class="fas fa-cogs text-red-500 mr-2"></i> Transmission: <span class="ml-auto">Automatic</span></div>
+                <div class="flex items-center"><i class="fas fa-bolt text-red-500 mr-2"></i> Power: <span class="ml-auto">300 hp</span></div>
+                <div class="flex items-center"><i class="fas fa-car text-red-500 mr-2"></i> Drive: <span class="ml-auto">AWD</span></div>
+            </div>
+        </div>
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Features</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> ABS</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Airbags</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Alloy wheels</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Bluetooth</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Apple CarPlay</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Wireless Charging</div>
+            </div>
+        </div>
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Similar Listings</h2>
+            <div class="space-y-4">
+                <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                    <img src="car2.jpg" alt="Red Toyota Camry car" class="w-16 h-10 rounded-lg">
+                    <div class="ml-4">
+                        <h3 class="font-bold"><a href="car2.html"> Hyundai Staria MPV</a></h3>
+                        <div class="text-red-500 font-bold">$45,000</div>
+                    </div>
+                    <div class="ml-auto text-gray-500"><i class="fas fa-heart"></i> 100</div>
+                </div>
+                <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                    <img src="car3.png" alt="Silver Lexus IS 250 car" class="w-16 h-10 rounded-lg">
+                    <div class="ml-4">
+                        <h3 class="font-bold"><a href="car3.html"> BYD Sealion 6 PHEV </a></h3>
+                        <div class="text-red-500 font-bold">$35,000</div>
+                    </div>
+                    <div class="ml-auto text-gray-500"><i class="fas fa-heart"></i> 200</div>
+                </div>
+                <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                    <img src="car4.png" alt="Blue Mazda CX-5 car" class="w-16 h-10 rounded-lg">
+                    <div class="ml-4">
+                        <h3 class="font-bold"><a href="car4.html"> Kia EV6 Facelift </a></h3>
+                        <div class="text-red-500 font-bold">$35,000</div>
+                    </div>
+                    <div class="ml-auto text-gray-500"><i class="fas fa-heart"></i> 19,000</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="car3.js"></script>
+</body>
+</html>

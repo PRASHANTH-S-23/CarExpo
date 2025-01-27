@@ -1,0 +1,98 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+/* Container */
+.max-w-6xl {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Headings */
+h1, h2 {
+    font-family: 'Segoe UI', sans-serif;
+    color: #1f2937;
+}
+
+/* Card styles */
+.car-section {
+    margin-bottom: 2rem;
+}
+
+.car-section img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.car-section img:hover {
+    transform: scale(1.05);
+}
+
+.card-header {
+    background-color: #ef4444;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-info {
+    background-color: #1f2937;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.card-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card-info ul li {
+    margin-bottom: 0.5rem;
+}
+
+.card-info ul li strong {
+    color: #facc15;
+}
+
+/* Thumbnail styling */
+.thumbnail-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.thumbnail-container img {
+    border-radius: 0.5rem;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.thumbnail-container img:hover {
+    border-color: #ef4444;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .lg\\:flex-row {
+        flex-direction: column;
+    }
+
+    .lg\\:ml-8 {
+        margin-left: 0;
+    }
+
+    .lg\\:w-1\\/3 {
+        width: 100%;
+    }
+}

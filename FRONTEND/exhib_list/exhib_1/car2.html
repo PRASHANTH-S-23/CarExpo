@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Listing</title>
+    <link rel="stylesheet" href="car.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="max-w-6xl mx-auto p-4">
+        <!-- Main Container -->
+        <div class="flex flex-col lg:flex-row">
+            <!-- Left Section -->
+            <div class="flex-1">
+                <h1 class="text-3xl font-bold mb-4">Hyundai Staria MPV 2023</h1>
+                <div class="relative">
+                    <img src="car2.jpg" alt="Hyundai Staria MPV" class="w-full rounded-lg">
+                    <div class="absolute top-2 left-2 bg-white text-black px-2 py-1 rounded">MPV</div>
+                </div>
+                <!-- Thumbnail Links -->
+                <div class="flex mt-4 space-x-2">
+                    <a href="car1.html" class="thumbnail">
+                        <img src="car11.jpeg" alt="BMW iX1 LWB" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car3.html" class="thumbnail">
+                        <img src="car3.png" alt="Hyundai Staria MPV" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car4.html" class="thumbnail">
+                        <img src="car4.png" alt="BYD Sealion 6 PHEV" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car5.html" class="thumbnail">
+                        <img src="car5.png" alt="Kia EV6 facelift" class="w-16 h-10 rounded-lg">
+                    </a>
+                    <a href="car6.html" class="thumbnail">
+                        <img src="car6.jpg" alt="Maruti e Vitara" class="w-16 h-10 rounded-lg">
+                    </a>
+                </div>
+                <!-- Back Button -->
+                <div class="mt-8">
+                    <a href="car1.html" id="backButton" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-700">Back to Main Page</a>
+                </div>
+            </div>
+            <!-- Right Section -->
+            <div class="lg:w-1/3 lg:ml-8 mt-8 lg:mt-0 car-description bg-gray-800 text-white p-4 rounded-lg">
+                <h2 class="text-lg font-bold mb-2">Car Description</h2>
+                <p>The Hyundai Staria MPV offers a unique blend of modern design and advanced technology, making it an ideal choice for families or business trips. It comes with a 2.2L turbocharged diesel engine and an automatic transmission system, ensuring smooth driving experience. With a 7- or 9-seater configuration, the Staria is perfect for those seeking a versatile and spacious vehicle with advanced safety features and connectivity.</p>
+            </div>
+        </div>
+
+        <!-- Car Details Section -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Car Details</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                <div class="flex items-center"><i class="fas fa-tachometer-alt text-red-500 mr-2"></i> Mileage: <span class="ml-auto">12.8 km/l</span></div>
+                <div class="flex items-center"><i class="fas fa-cogs text-red-500 mr-2"></i> Engine: <span class="ml-auto">2.2L Turbo Diesel</span></div>
+                <div class="flex items-center"><i class="fas fa-calendar-alt text-red-500 mr-2"></i> Year: <span class="ml-auto">2023</span></div>
+                <div class="flex items-center"><i class="fas fa-gas-pump text-red-500 mr-2"></i> Fuel consumption: <span class="ml-auto">7.8 L/100 km</span></div>
+                <div class="flex items-center"><i class="fas fa-tint text-red-500 mr-2"></i> Fuel type: <span class="ml-auto">Diesel</span></div>
+                <div class="flex items-center"><i class="fas fa-road text-red-500 mr-2"></i> Fuel economy: <span class="ml-auto">12.8 km/l</span></div>
+                <div class="flex items-center"><i class="fas fa-palette text-red-500 mr-2"></i> Exterior Color: <span class="ml-auto">Phantom Black, Creamy White, Silver</span></div>
+                <div class="flex items-center"><i class="fas fa-chair text-red-500 mr-2"></i> Interior Color: <span class="ml-auto">Premium Leather</span></div>
+                <div class="flex items-center"><i class="fas fa-cogs text-red-500 mr-2"></i> Transmission: <span class="ml-auto">Automatic</span></div>
+                <div class="flex items-center"><i class="fas fa-bolt text-red-500 mr-2"></i> Power: <span class="ml-auto">175 hp</span></div>
+                <div class="flex items-center"><i class="fas fa-car text-red-500 mr-2"></i> Drive: <span class="ml-auto">FWD</span></div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Features</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> ABS</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Airbags</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Alloy wheels</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Wireless Charging</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> 360° Camera</div>
+                <div class="flex items-center"><i class="fas fa-check text-red-500 mr-2"></i> Android Auto/Apple CarPlay</div>
+            </div>
+        </div>
+
+        <!-- Similar Listings Section -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Similar Listings</h2>
+            <div class="space-y-4">
+                <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                    <img src="car5.png" alt="Toyota Camry" class="w-16 h-10 rounded-lg">
+                    <div class="ml-4">
+                        <h3 class="font-bold"><a href="car5.html">Maruti e Vitara</a></h3>
+                        <div class="text-red-500 font-bold">$45,000</div>
+                    </div>
+                    <div class="ml-auto text-gray-500"><i class="fas fa-heart"></i> 100</div>
+                </div>
+                <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                    <img src="car6.jpg" alt="Lexus IS 250" class="w-16 h-10 rounded-lg">
+                    <div class="ml-4">
+                        <h3 class="font-bold"><a href="car6.html">Mercedes-Benz Unveils Luxury Sedan</a></h3>
+                        <div class="text-red-500 font-bold">$35,000</div>
+                    </div>
+                    <div class="ml-auto text-gray-500"><i class="fas fa-heart"></i> 200</div>
+                </div>
+                <div class="flex items-center bg-white p-4 rounded-lg shadow">
+                    <img src="car11.jpeg" alt="Mazda CX-5" class="w-16 h-10 rounded-lg">
+                    <div class="ml-4">
+                        <h3 class="font-bold"><a href="car1.html"> BMW iX1 LWB 2023</a></h3>
+                        <div class="text-red-500 font-bold">$35,000</div>
+                    </div>
+                    <div class="ml-auto text-gray-500"><i class="fas fa-heart"></i> 19,000</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="car3.js"></script>
+</body>
+</html>

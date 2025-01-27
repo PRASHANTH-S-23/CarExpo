@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Reem Kufi", sans-serif !important;
+  }
+  .landing-page {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .login-container {
+    background-image: url(./assets/bgimage.png);
+    background-size: cover;
+  }
+  
+  header {
+    font-family: "Reem Kufi", sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    bottom: 75%;
+    right: 50%;
+  }
+  
+  .tagline {
+    font-family: "Reem Kufi", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #555;
+    text-align: center;
+    margin: 0;
+  }
+  
+  p {
+    color: black;
+    font-size: 20px;
+    max-width: 85%;
+    background-color: rgba(240, 255, 255, 0.448);
+    padding: 2rem;
+    border-radius: 15px;
+  }
+  .next {
+    color: rgb(1, 1, 1);
+    border: solid black;
+    border-radius: 15px;
+    padding: 3px;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+    display: inline-block;
+    font-size: 25px;
+    position: absolute;
+    top: 70%;
+  }
+  .pages {
+    text-decoration: none;
+    color: inherit;
+  }
+  .next:hover {
+    background-color: rgba(211, 211, 211, 0.099);
+    font-size: 1.7rem;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .mainpage {
+    background-image: url(./assets/bgimage.png);
+    background-size: cover;
+  }
+  .container {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-image: url("./assets/webmain2bg.png");
+    background-size: cover;
+  }
+  .box {
+    border-radius: 20px;
+    height: 300px;
+    width: 300px;
+    text-decoration: none;
+    display: flex;
+    font-size: 22px;
+    background-color: rgba(175, 133, 75, 0.327);
+    border: 2px solid black;
+    margin: 2rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    color: #000;
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
+  }
+  .box:hover {
+    background-color: rgba(211, 211, 211, 0.099);
+    font-size: 1.7rem;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  .container1 {
+    display: flex;
+    flex-direction: column;
+    background-image: url("./assets/webmainbg.png");
+    background-size: cover;
+  }
+  .pos {
+    width: 80%;
+    height: 300px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(24, 29, 29, 0.125);
+  }
+  #pos-2 {
+    margin-left: auto;
+    margin-right: 10px;
+    text-align: left;
+    flex-direction: row-reverse;
+  }
+  #pos-1 {
+    margin-right: auto;
+    margin-left: 10px;
+    text-align: right;
+    flex-direction: row;
+  }
+  .desc {
+    max-width: 700px;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+  }
+  .pos-1img {
+    height: 280px;
+    width: 280px;
+    object-fit: cover;
+  }
+  .pos-2img {
+    height: 280px;
+    width: 280px;
+    object-fit: cover;
+  }
+  .headings {
+    text-align: center;
+    width: 100%;
+    font-size: 1.5em;
+  }
+  /*
+  #box-1 {
+    background-image: url(assets/Mysore-palace.png);
+  } */
+  
+  /* Navbar Styling */
+  .navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #ffa500;
+  }
+  
+  .form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.486);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .form-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  body {
+    background-image: url("./assets/bgimage2.jpg");
+    background-size: cover;
+  }
+  .loginparagraph {
+    color: black;
+    font-size: 20px;
+    max-width: 85%;
+    background-color: rgba(240, 255, 255, 0.064);
+  }
+  
+  .userdetails {
+    background-color: #ffffff;
+  }
+  
