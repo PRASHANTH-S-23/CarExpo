@@ -7,34 +7,40 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
-//will add later
-const mongoURI = process.env.MONGO_URI;
+const fs = require("fs");
 
 const app = express();
-const PORT = 3000;
-const JWT_SECRET = "your_jwt_secret_key"; // Replace with a secure key in production
+const PORT = process.env.PORT || 3000;
+const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret_key"; // Ensure you set JWT_SECRET in .env
+const mongoURI = process.env.MONGO_URI;
+
+if (!mongoURI) {
+  console.error("❌ MongoDB URI is missing. Set MONGO_URI in .env file.");
+  process.exit(1);
+}
 
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
-app.use("/uploads", express.static("uploads")); // Serve uploaded images
+app.use("/uploads", express.static("uploads"));
 
 // Multer configuration for file uploads
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/");
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + path.extname(file.originalname)); // Unique file name
-  },
+  destination: (req, file, cb) => cb(null, "uploads/"),
+  filename: (req, file, cb) =>
+    cb(null, Date.now() + path.extname(file.originalname)),
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({ storage });
 
 // Connect to MongoDB
-mongoose.connect(mongoURI)
-  .then(() => console.log("Connected to MongoDB Atlas"))
-  .catch((err) => console.error("MongoDB connection error:", err));
+mongoose
+  .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("✅ Connected to MongoDB Atlas"))
+  .catch((err) => {
+    console.error("❌ MongoDB connection error:", err);
+    process.exit(1);
+  });
 
 // Define User Schema and Model
 const userSchema = new mongoose.Schema({
@@ -65,29 +71,16 @@ app.post(
   ]),
   async (req, res) => {
     try {
-      const {
-        firstName,
-        lastName,
-        email,
-        password,
-        nationality,
-        mobile,
-        dob,
-        aadhaar,
-        pan,
-        passport,
-      } = req.body;
+      const { firstName, lastName, email, password, nationality, mobile, dob, aadhaar, pan, passport } = req.body;
 
       // Check if user already exists
-      const existingUser = await User.findOne({ email });
-      if (existingUser) {
+      if (await User.findOne({ email })) {
         return res.status(400).json({ message: "Email already exists!" });
       }
 
       // Hash the password
       const hashedPassword = await bcrypt.hash(password, 10);
 
-      // Prepare the user data
       const userData = {
         firstName,
         lastName,
@@ -100,29 +93,19 @@ app.post(
 
       if (nationality === "India") {
         userData.aadhaar = aadhaar || null;
-        userData.aadhaarImage = req.files["aadhaarImage"]
-          ? req.files["aadhaarImage"][0].path
-          : null;
+        userData.aadhaarImage = req.files["aadhaarImage"]?.[0]?.path || null;
         userData.pan = pan || null;
-        userData.panImage = req.files["panImage"]
-          ? req.files["panImage"][0].path
-          : null;
+        userData.panImage = req.files["panImage"]?.[0]?.path || null;
       } else {
         userData.passport = passport || null;
-        userData.passportImage = req.files["passportImage"]
-          ? req.files["passportImage"][0].path
-          : null;
+        userData.passportImage = req.files["passportImage"]?.[0]?.path || null;
       }
 
-      // Save new user to the database
-      const newUser = new User(userData);
-      await newUser.save();
-
-      res
-        .status(201)
-        .json({ message: "Signup successful! You can now log in." });
+      // Save new user
+      await new User(userData).save();
+      res.status(201).json({ message: "Signup successful! You can now log in." });
     } catch (err) {
-      console.error(err);
+      console.error("Signup Error:", err);
       res.status(500).json({ message: "An error occurred during signup." });
     }
   }
@@ -132,82 +115,51 @@ app.post(
 app.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
-
-    // Check if user exists
     const user = await User.findOne({ email });
-    if (!user) {
+
+    if (!user || !(await bcrypt.compare(password, user.password))) {
       return res.status(401).json({ message: "Invalid email or password!" });
     }
 
-    // Verify password
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-    if (!isPasswordValid) {
-      return res.status(401).json({ message: "Invalid email or password!" });
-    }
-
-    // Generate a JWT token
-    const token = jwt.sign({ id: user._id, email: user.email }, JWT_SECRET, {
-      expiresIn: "1h",
-    });
+    const token = jwt.sign({ id: user._id, email: user.email }, JWT_SECRET, { expiresIn: "1h" });
 
     res.json({ message: "Login successful!", token, userId: user._id });
   } catch (err) {
-    console.error(err);
+    console.error("Login Error:", err);
     res.status(500).json({ message: "An error occurred during login." });
   }
 });
 
-// User Details Endpoint
+// Get User Details
 app.get("/user-details/:id", async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
-    if (!user) {
-      return res.status(404).json({ message: "User not found!" });
-    }
+    if (!user) return res.status(404).json({ message: "User not found!" });
     res.json(user);
   } catch (err) {
-    console.error(err);
-    res
-      .status(500)
-      .json({ message: "An error occurred while fetching user details." });
+    console.error("Fetch User Error:", err);
+    res.status(500).json({ message: "An error occurred while fetching user details." });
   }
 });
 
-// Delete User Endpoint
+// Delete User
 app.delete("/user/:id", async (req, res) => {
   try {
-    const userId = req.params.id;
+    const user = await User.findByIdAndDelete(req.params.id);
+    if (!user) return res.status(404).json({ message: "User not found!" });
 
-    // Find and delete the user
-    const user = await User.findByIdAndDelete(userId);
-    if (!user) {
-      return res.status(404).json({ message: "User not found!" });
-    }
-
-    // Optionally, remove uploaded images
-    if (user.aadhaarImage) {
-      const fs = require("fs");
-      fs.unlinkSync(user.aadhaarImage);
-    }
-    if (user.panImage) {
-      const fs = require("fs");
-      fs.unlinkSync(user.panImage);
-    }
-    if (user.passportImage) {
-      const fs = require("fs");
-      fs.unlinkSync(user.passportImage);
-    }
+    ["aadhaarImage", "panImage", "passportImage"].forEach((field) => {
+      if (user[field]) fs.unlinkSync(user[field]);
+    });
 
     res.json({ message: "User deleted successfully!" });
   } catch (err) {
-    console.error(err);
-    res
-      .status(500)
-      .json({ message: "An error occurred while deleting the user." });
+    console.error("Delete User Error:", err);
+    res.status(500).json({ message: "An error occurred while deleting the user." });
   }
 });
 
-// Start the Server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+// Start Server
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Server is running on port ${PORT}`);
 });
