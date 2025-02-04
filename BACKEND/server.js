@@ -10,8 +10,8 @@ const path = require("path");
 const fs = require("fs");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret_key"; // Ensure you set JWT_SECRET in .env
+const PORT = process.env.PORT || 3002;
+const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret_key";
 const mongoURI = process.env.MONGO_URI;
 
 if (!mongoURI) {
@@ -23,6 +23,14 @@ if (!mongoURI) {
 app.use(bodyParser.json());
 app.use(cors());
 app.use("/uploads", express.static("uploads"));
+
+// Serve frontend files
+app.use(express.static(path.join(__dirname, "FRONTEND")));
+
+// Redirect root URL to landing page
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "FRONTEND", "landing_page.html"));
+});
 
 // Multer configuration for file uploads
 const storage = multer.diskStorage({
@@ -73,12 +81,10 @@ app.post(
     try {
       const { firstName, lastName, email, password, nationality, mobile, dob, aadhaar, pan, passport } = req.body;
 
-      // Check if user already exists
       if (await User.findOne({ email })) {
         return res.status(400).json({ message: "Email already exists!" });
       }
 
-      // Hash the password
       const hashedPassword = await bcrypt.hash(password, 10);
 
       const userData = {
@@ -101,7 +107,6 @@ app.post(
         userData.passportImage = req.files["passportImage"]?.[0]?.path || null;
       }
 
-      // Save new user
       await new User(userData).save();
       res.status(201).json({ message: "Signup successful! You can now log in." });
     } catch (err) {
@@ -160,6 +165,15 @@ app.delete("/user/:id", async (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, "0.0.0.0", () => {
+app.listen(PORT, "0.0.0.0", async () => {
   console.log(`🚀 Server is running on port ${PORT}`);
+  console.log(`🔗 Redirecting to http://localhost:${PORT}/`);
+
+  // Dynamically import and open the browser
+  try {
+    const open = await import("open");
+    open.default(`http://localhost:3001/FRONTEND/landing_page.html`);
+  } catch (err) {
+    console.error("❌ Failed to open the browser:", err);
+  }
 });
