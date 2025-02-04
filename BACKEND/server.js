@@ -42,8 +42,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Connect to MongoDB
-mongoose
-  .connect(mongoURI)
+mongoose.connect(mongoURI)
   .then(() => console.log("✅ Connected to MongoDB Atlas"))
   .catch((err) => {
     console.error("❌ MongoDB connection error:", err);
@@ -165,6 +164,7 @@ app.delete("/user/:id", async (req, res) => {
 });
 
 // Start Server
+
 app.listen(PORT, "0.0.0.0", async () => {
   console.log(`🚀 Server is running on port ${PORT}`);
   console.log(`🔗 Redirecting to http://localhost:${PORT}`);
