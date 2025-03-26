@@ -7,7 +7,7 @@
 
 ### ✨ About the Project
 CarExpo is our sleek and shiny WebTech creation, built to rev up your curiosity about cars! Designed as part of our 3rd-year CSE journey at BMSIT & M.
-
+Get your info on exhibitions here.
 ---
 
 ### 🛠️ Creators
@@ -18,5 +18,5 @@ CarExpo is our sleek and shiny WebTech creation, built to rev up your curiosity 
 
 ---
 
-> "Driving innovation, one line of code at a time!"  
+> "Fueling Your Passion, One Car at a Time!"  
 > *- Team CarExpo*
